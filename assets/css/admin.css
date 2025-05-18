@@ -1,0 +1,43 @@
+  .plugin-settings-form {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+  }
+
+  .plugin-settings-form h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .plugin-settings-form table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .plugin-settings-form input[type="text"],
+  .plugin-settings-form input[type="email"],
+  .plugin-settings-form select,
+  .plugin-settings-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .plugin-settings-form .button-primary {
+    background-color: #007cba;
+    border-color: #007cba;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .plugin-settings-form .button-primary:hover {
+    background-color: #005a9c;
+    border-color: #005a9c;
+  }

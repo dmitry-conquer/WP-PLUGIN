@@ -6,26 +6,18 @@
  * Author: Dmitro Frolov
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit;
 }
 
-// Define plugin constants.
-define( 'PLUGIN_NAME_PATH', plugin_dir_path( __FILE__ ) );
-define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
-define( 'PLUGIN_NAME_BASENAME', plugin_basename( __FILE__ ) );
 
-// Autoload required files.
-require_once PLUGIN_NAME_PATH . 'includes/class-settings-page.php';
-require_once PLUGIN_NAME_PATH . 'includes/class-admin-hooks.php';
-require_once PLUGIN_NAME_PATH . 'includes/class-enqueue.php';
-require_once PLUGIN_NAME_PATH . 'includes/class-plugin-name.php';
+require_once __DIR__ . '/src/Autoloader.php';
 
-/**
- * Initialize the plugin.
- */
-function plugin_name_init() {
-    $plugin = new Plugin_Class_Name();
-    $plugin->run();
-}
-add_action( 'plugins_loaded', 'plugin_name_init' );
+Plugin_Name\Autoloader::register();
+
+add_action('plugins_loaded', function () {
+    Plugin_Name\EnqueueAdmin::register();
+    Plugin_Name\EnqueueFrontend::register();
+    Plugin_Name\SettingsPage::register();
+    Plugin_Name\AdminHooks::register();
+});
